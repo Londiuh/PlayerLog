@@ -19,7 +19,7 @@ public class ServerPlayerInteractionManagerMixin {
     private void interactItem(ServerPlayerEntity player, World world, ItemStack stack, Hand hand, CallbackInfoReturnable<ActionResult> ci) {
         PlayerLog.logger.info(
             "[PlayerLog] {} interacted with item {} at {}",
-            player.getDisplayName().asString(),
+            player.getEntityName(),
             stack.getItem(),
             player.getPos()
             
@@ -29,7 +29,7 @@ public class ServerPlayerInteractionManagerMixin {
     private void interactBlock(ServerPlayerEntity player, World world, ItemStack stack, Hand hand, BlockHitResult hitResult, CallbackInfoReturnable<ActionResult> ci) {
         PlayerLog.logger.info(
             "[PlayerLog] {} interacted with {} at {} using {}",
-            player.getDisplayName().asString(),
+            player.getEntityName(),
             world.getBlockState(hitResult.getBlockPos()).getBlock(),
             hitResult.getBlockPos(),
             stack.getItem()
